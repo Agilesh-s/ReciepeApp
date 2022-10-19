@@ -7,13 +7,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddReciepeComponent } from './add-reciepe/add-reciepe.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ViewAllReciepeComponent } from './view-all-reciepe/view-all-reciepe.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormControl } from '@angular/forms';
 
 const appRoutes:Routes=[
   {
     path:"",component:AddReciepeComponent
   },
   {
-    path:"/viewReciepe",component:ViewAllReciepeComponent
+    path:"viewReciepe",component:ViewAllReciepeComponent
   }
 ]
 
@@ -28,7 +30,7 @@ const appRoutes:Routes=[
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

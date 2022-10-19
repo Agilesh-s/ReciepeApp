@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-all-reciepe',
@@ -7,8 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewAllReciepeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myApi:ApiService) { 
+    this.fetchData()
+  }
 
+  fetchData = ()=>{
+    this.myApi.data().subscribe(
+      (datas)=>{
+        this.reciepeList = datas
+      }
+    )
+  }
+
+  reciepeList:any = []
   ngOnInit(): void {
   }
 
