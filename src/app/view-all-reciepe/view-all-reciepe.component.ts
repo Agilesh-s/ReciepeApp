@@ -20,6 +20,17 @@ export class ViewAllReciepeComponent implements OnInit {
     )
   }
 
+  deleteReciepe = (id:any)=>{
+    let data = {
+      "id":id
+  }
+    this.myApi.deleteReciepe(data).subscribe(
+      (resp)=>{
+        alert("DELETED SUCCESSFULLY")
+      }
+    )
+  }
+
   reciepeList:any = []
   ngOnInit(): void {
   }

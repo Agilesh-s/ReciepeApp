@@ -8,7 +8,7 @@ import { AddReciepeComponent } from './add-reciepe/add-reciepe.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ViewAllReciepeComponent } from './view-all-reciepe/view-all-reciepe.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormControl } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes:Routes=[
   {
@@ -30,7 +30,8 @@ const appRoutes:Routes=[
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
